@@ -1,0 +1,6 @@
+Path
+pytesseract
+numpy
+optspec
+opencv-python
+
