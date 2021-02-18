@@ -3,13 +3,13 @@ import pytesseract
 import numpy as np
 import sys
 import getopt
+import os
+from urllib.parse import urlparse
 
 
 print ("Number of arguments:", len(sys.argv), "arguments.")
 
 print ("Argument List:", str(sys.argv))
-
-
 
 
 url = "." + sys.argv[1]
@@ -26,3 +26,13 @@ img = cv2.erode(gray, kernel, iterations=1)
 img = cv2.dilate(img, kernel, iterations=1)
 out_below = pytesseract.image_to_string(img)
 print("OUTPUT:", out_below)
+
+#change file name from title
+
+path = os.path.dirname(url)
+print(path)
+newfilename = path + "/" + out_below
+print(newfilename)
+os.rename(url,newfilename)
+
+
