@@ -44,7 +44,8 @@ def change_name(url):
     #print(path)
     corrected = spell(out_below)
     #replacing ? with space 
-    corrected.replace("?"," ")
+    corrected = ' '.join(corrected.split())
+
 
     newfilename = path + "/" + corrected + ".png"
     print(newfilename)
