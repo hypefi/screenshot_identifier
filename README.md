@@ -6,3 +6,4 @@ In CLI
 ```
 python3 detect.py .\path\of\screenshots
 ```
+WIP
