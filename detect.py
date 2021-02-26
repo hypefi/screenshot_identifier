@@ -75,10 +75,11 @@ def change_name(url):
     try:
         os.rename(url,newfilename)
     except OSError:
-        newfilename = re.sub('[!@#></\~]', '', newfilename)
-        os.rename(url,newfilename[0:150])
+        nfilename = corrected + ".png"
+        newfilename = path + "/" + re.sub('[!@#>/\<~]', '', corrected)
+        os.rename(url,newfilename[0:180])
     finally:
-        print("error", OSError)
+        pass
 
 for path in pathlist:
      path_in_str = str(path)
